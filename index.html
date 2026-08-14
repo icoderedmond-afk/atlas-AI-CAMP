@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>idex.html</title>
+    <title>idex.html - Scroll Edition</title>
     <style>
         * {
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
@@ -43,34 +44,35 @@
             font-size: 1.4rem;
         }
 
-        .tab-container {
+        /* Main scrollable container */
+        .scroll-container {
             width: 100%;
             flex: 1;
             padding: 40px 60px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            gap: 80px;
         }
 
-        .tab-content {
-            display: none;
+        .section-block {
             width: 100%;
+            background: #ffffff;
+            border: 2px solid #b9d2e8;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 12px rgba(0,86,179,0.08);
         }
 
-        .tab-content.active {
-            display: block;
-        }
-
-        .tab-header {
+        .section-header {
             border-bottom: 3px solid #0056b3;
             padding-bottom: 15px;
             margin-bottom: 35px;
             width: 100%;
         }
 
-        .tab-content h2 {
+        .section-header h2 {
             margin: 0 0 10px 0;
-            font-size: 3rem;
+            font-size: 2.8rem;
             color: #003d82;
         }
 
@@ -92,6 +94,7 @@
             display: flex;
             flex-direction: column;
             gap: 20px;
+            align-items: center;
         }
 
         .right-column {
@@ -103,7 +106,7 @@
         .image-placeholder {
             width: 100%;
             height: 250px;
-            background: #ffffff;
+            background: #f0f4f8;
             border: 3px dashed #b9d2e8;
             border-radius: 8px;
             display: flex;
@@ -120,38 +123,47 @@
             margin-top: 10px;
         }
 
-        /* Semi-circle Fun Fact Box */
-        .semi-circle-box {
-            width: 100%;
-            background: #e1ecf8;
-            border: 1px solid #b9d2e8;
-            border-bottom-left-radius: 120px;
-            border-bottom-right-radius: 120px;
-            padding: 25px 30px;
+        /* Perfect Circle Fun Fact Box */
+        .circle-box {
+            width: 240px;
+            height: 240px;
+            background: #0056b3;
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            box-shadow: inset 0 -5px 10px rgba(0,86,179,0.05);
+            padding: 30px;
+            box-shadow: 0 6px 15px rgba(0,86,179,0.2);
+            margin: 10px auto;
+            border: 4px solid #e1ecf8;
         }
 
-        .semi-circle-box h4 {
+        .circle-box h4 {
             margin: 0 0 8px 0;
-            font-size: 1.2rem;
-            color: #0056b3;
+            font-size: 1.3rem;
+            color: #d0e1fd;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .semi-circle-box p {
+        .circle-box p {
             margin: 0;
-            font-size: 1.05rem;
-            color: #243b53;
-            line-height: 1.5;
+            font-size: 0.95rem;
+            color: #ffffff;
+            line-height: 1.4;
         }
 
         .info-box {
-            background: #ffffff;
+            background: #f8fbff;
             border: 1px solid #b9d2e8;
             border-left: 8px solid #0056b3;
             padding: 22px 25px;
             border-radius: 6px;
             box-shadow: 0 2px 8px rgba(0,86,179,0.05);
+            width: 100%;
         }
 
         .info-box h3 {
@@ -174,53 +186,19 @@
         .info-box li {
             margin-bottom: 8px;
         }
-
-        .navigation {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            margin-top: 40px;
-            border-top: 3px solid #b9d2e8;
-            padding-top: 30px;
-        }
-
-        .nav-btn {
-            background-color: #0056b3;
-            color: #ffffff;
-            border: none;
-            padding: 16px 45px;
-            font-size: 1.25rem;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 6px;
-            transition: background-color 0.2s, transform 0.1s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .nav-btn:hover {
-            background-color: #003d82;
-            transform: translateY(-2px);
-        }
-
-        .page-indicator {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: #0056b3;
-        }
     </style>
 </head>
 <body>
 
     <header>
         <h1>VEX IQ DATA HUB</h1>
-        <p>FILE: idex.html — Comprehensive Blue & White Edition</p>
+        <p>FILE: idex.html — Continuous Scroll Edition</p>
     </header>
 
-    <div class="tab-container">
+    <div class="scroll-container">
         
-        <div class="tab-content active" id="tab-1">
-            <div class="tab-header">
+        <div class="section-block" id="section-brain">
+            <div class="section-header">
                 <h2>Robot Brain</h2>
                 <p class="subtitle">The Central Processing Unit and Core Controller of the VEX IQ System</p>
             </div>
@@ -231,9 +209,9 @@
                         <strong style="font-size: 1.1rem; color: #0056b3;">[ IMAGE SLOT: BRAIN ]</strong>
                         <span>Upload your high-res image link here</span>
                     </div>
-                    <div class="semi-circle-box">
+                    <div class="circle-box">
                         <h4>Fun Fact</h4>
-                        <p>The VEX IQ Brain's onboard processor handles thousands of control loops every second to keep autonomous programs running smoothly!</p>
+                        <p>The Brain handles thousands of loops every second to run your code!</p>
                     </div>
                     <div class="info-box">
                         <h3>How to Use the Robot Brain</h3>
@@ -242,10 +220,6 @@
                             <li>Plug sensors and smart motors directly into any of the 12 Auto-ID ports.</li>
                             <li>Power on the display screen, navigate the menu, and select your custom program.</li>
                         </ul>
-                    </div>
-                    <div class="info-box">
-                        <h3>Deep Dive Technical Note</h3>
-                        <p>Firmware updates can be downloaded via VEXcode to add new features, fix bugs, and optimize wireless connection stability.</p>
                     </div>
                 </div>
                 <div class="right-column">
@@ -266,16 +240,12 @@
                         <h3>Practical Real-World Example</h3>
                         <p>During an autonomous maze navigation trial, the Brain continuously reads orientation values from an internal gyroscope while simultaneously regulating individual motor speeds to ensure the robot maintains a perfectly straight trajectory across the field surface.</p>
                     </div>
-                    <div class="info-box">
-                        <h3>Advanced Camp Troubleshooting Tips</h3>
-                        <p>Always verify that port connection cables click securely into place. If a device fails to register, check the Brain's device info screen to ensure the Auto-ID system recognizes the port address properly before running code execution trials.</p>
-                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="tab-content" id="tab-2">
-            <div class="tab-header">
+        <div class="section-block" id="section-motors">
+            <div class="section-header">
                 <h2>Smart Motors</h2>
                 <p class="subtitle">High-Torque Actuation, Internal Encoders, and Precise Position Control</p>
             </div>
@@ -286,9 +256,9 @@
                         <strong style="font-size: 1.1rem; color: #0056b3;">[ IMAGE SLOT: MOTORS ]</strong>
                         <span>Upload your high-res image link here</span>
                     </div>
-                    <div class="semi-circle-box">
+                    <div class="circle-box">
                         <h4>Fun Fact</h4>
-                        <p>Smart motors contain dedicated microprocessors that track every single degree of shaft rotation completely independently!</p>
+                        <p>Smart motors track every single degree of shaft rotation independently!</p>
                     </div>
                     <div class="info-box">
                         <h3>How to Use Smart Motors</h3>
@@ -297,10 +267,6 @@
                             <li>Configure target velocity settings (0 to 100 RPM) and degrees inside your coding interface.</li>
                             <li>Secure the motor housing firmly onto plastic beams using locking structural pins.</li>
                         </ul>
-                    </div>
-                    <div class="info-box">
-                        <h3>Stall Protection Features</h3>
-                        <p>Internal circuitry detects high resistance loads instantly, cutting power to prevent gear stripping or overheating.</p>
                     </div>
                 </div>
                 <div class="right-column">
@@ -321,16 +287,12 @@
                         <h3>Practical Real-World Example</h3>
                         <p>Rotating an actuator mechanism precisely 360 degrees to lift a heavy game element container off the floor onto an elevated scoring platform, utilizing built-in degree feedback to stop at the exact target height.</p>
                     </div>
-                    <div class="info-box">
-                        <h3>Advanced Camp Troubleshooting Tips</h3>
-                        <p>If a motor starts clicking or struggling under heavy loads, check your gear ratios to ensure you aren't exceeding maximum recommended torque limits for the connected structural axles.</p>
-                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="tab-content" id="tab-3">
-            <div class="tab-header">
+        <div class="section-block" id="section-basebot">
+            <div class="section-header">
                 <h2>BaseBot Setup</h2>
                 <p class="subtitle">The Standard Foundation Build for Movement, Drivetrain Physics, and Turning Dynamics</p>
             </div>
@@ -341,9 +303,9 @@
                         <strong style="font-size: 1.1rem; color: #0056b3;">[ IMAGE SLOT: BASEBOT ]</strong>
                         <span>Upload your high-res image link here</span>
                     </div>
-                    <div class="semi-circle-box">
+                    <div class="circle-box">
                         <h4>Fun Fact</h4>
-                        <p>The standard BaseBot uses a symmetrical tank-drive layout, making it the most reliable vehicle design for learning geometry turns!</p>
+                        <p>Tank-drive layouts make the BaseBot ideal for learning geometry turns!</p>
                     </div>
                     <div class="info-box">
                         <h3>How to Use BaseBot Setup</h3>
@@ -352,10 +314,6 @@
                             <li>Wire the left and right drive motors into designated control ports on the Robot Brain.</li>
                             <li>Test drive movements using remote control configurations before writing custom autonomous code.</li>
                         </ul>
-                    </div>
-                    <div class="info-box">
-                        <h3>Weight Distribution Rules</h3>
-                        <p>Mounting the heavy battery and Brain low in the center prevents the vehicle from flipping during sharp turns.</p>
                     </div>
                 </div>
                 <div class="right-column">
@@ -376,16 +334,12 @@
                         <h3>Practical Real-World Example</h3>
                         <p>Navigating a complex square obstacle course by executing precise 90-degree pivot turns at designated field coordinate intersections using synchronized motor counter-rotation.</p>
                     </div>
-                    <div class="info-box">
-                        <h3>Advanced Camp Troubleshooting Tips</h3>
-                        <p>Ensure that wheel fasteners are not screwed down too tightly against the chassis structure, as excessive friction will reduce top speed and drain battery life prematurely.</p>
-                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="tab-content" id="tab-4">
-            <div class="tab-header">
+        <div class="section-block" id="section-sensors">
+            <div class="section-header">
                 <h2>Core Sensors</h2>
                 <p class="subtitle">Distance, Optical, Gyro, and Touch Modules for Complete Environmental Awareness</p>
             </div>
@@ -396,5 +350,136 @@
                         <strong style="font-size: 1.1rem; color: #0056b3;">[ IMAGE SLOT: SENSORS ]</strong>
                         <span>Upload your high-res image link here</span>
                     </div>
-                    <div class="semi-circle-box">
+                    <div class="circle-box">
                         <h4>Fun Fact</h4>
+                        <p>Ultrasonic sensors bounce sound waves off objects just like real bats do!</p>
+                    </div>
+                    <div class="info-box">
+                        <h3>How to Use Core Sensors</h3>
+                        <ul>
+                            <li>Mount sensor modules securely onto the front or top chassis facing your target field area.</li>
+                            <li>Plug connection wires into any smart port on the Brain and verify device registration.</li>
+                            <li>Program conditional wait-until blocks to trigger actions based on live sensor feedback data.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="right-column">
+                    <div class="info-box">
+                        <h3>Core Technical Specifications & Architecture</h3>
+                        <ul>
+                            <li>Ultrasonic distance tracking measuring precise centimeters and inches over short ranges.</li>
+                            <li>Optical hardware capable of detecting distinct hues, color signatures, and ambient light levels.</li>
+                            <li>High-accuracy yaw, pitch, and tilt angle calculation via internal gyro processing hardware.</li>
+                            <li>Programmable multi-color Touch LED status button for interactive user interface controls.</li>
+                        </ul>
+                    </div>
+                    <div class="info-box">
+                        <h3>Primary Operational Uses</h3>
+                        <p>Provides the robot with comprehensive environmental awareness to detect boundary walls, sort colored game pieces, trigger conditional events, and track spatial orientation angles during competitive matches.</p>
+                    </div>
+                    <div class="info-box">
+                        <h3>Practical Real-World Example</h3>
+                        <p>Using the Distance sensor to continuously monitor approach vectors and halt the robot exactly five inches away from a perimeter wall before reversing direction.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-block" id="section-clawbot">
+            <div class="section-header">
+                <h2>ClawBot Build</h2>
+                <p class="subtitle">Advanced Manipulator Configuration Featuring Mechanical Arms and Pincer Grips</p>
+            </div>
+            <div class="layout-grid">
+                <div class="left-column">
+                    <div class="image-placeholder">
+                        <img src="placeholder-clawbot.png" alt="ClawBot Build" style="max-width:100%; max-height:150px; display:none;">
+                        <strong style="font-size: 1.1rem; color: #0056b3;">[ IMAGE SLOT: CLAWBOT ]</strong>
+                        <span>Upload your high-res image link here</span>
+                    </div>
+                    <div class="circle-box">
+                        <h4>Fun Fact</h4>
+                        <p>Arm gear ratios let the motor lift objects heavier than its own weight!</p>
+                    </div>
+                    <div class="info-box">
+                        <h3>How to Use ClawBot Build</h3>
+                        <ul>
+                            <li>Construct the arm and pincer assembly following structural alignment instructions closely.</li>
+                            <li>Attach the arm motor and claw motor to dedicated ports on the central Brain unit.</li>
+                            <li>Program button controls on your controller to open/close the claw and raise/lower the arm.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="right-column">
+                    <div class="info-box">
+                        <h3>Core Technical Specifications & Architecture</h3>
+                        <ul>
+                            <li>Engineered with a high-mechanical advantage gear-ratio arm lift system.</li>
+                            <li>Features a secure pincer-grip end effector designed for stable object transport.</li>
+                            <li>Counter-balanced chassis weight distribution designed to prevent forward tipping when loaded.</li>
+                            <li>Dedicated motor actuation for independent arm elevation and claw clamping mechanisms.</li>
+                        </ul>
+                    </div>
+                    <div class="info-box">
+                        <h3>Primary Operational Uses</h3>
+                        <p>Engineered specifically for competitive arena sorting tasks, gripping objects securely, and lifting camp items across high barrier zones during timed challenge rounds.</p>
+                    </div>
+                    <div class="info-box">
+                        <h3>Practical Real-World Example</h3>
+                        <p>Closing the mechanical pincer around a scoring cube, elevating the arm mechanism to clear field barriers, and transporting the item across the zone into an elevated bin.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-block" id="section-ai">
+            <div class="section-header">
+                <h2>AI Vision Sensor</h2>
+                <p class="subtitle">Neural Processing, Optical Object Classification, and AprilTag Spatial Target Tracking</p>
+            </div>
+            <div class="layout-grid">
+                <div class="left-column">
+                    <div class="image-placeholder">
+                        <img src="placeholder-ai.png" alt="AI Vision Sensor" style="max-width:100%; max-height:150px; display:none;">
+                        <strong style="font-size: 1.1rem; color: #0056b3;">[ IMAGE SLOT: AI SENSOR ]</strong>
+                        <span>Upload your high-res image link here</span>
+                    </div>
+                    <div class="circle-box">
+                        <h4>Fun Fact</h4>
+                        <p>AprilTags act like smart barcodes for instant 3D distance calculations!</p>
+                    </div>
+                    <div class="info-box">
+                        <h3>How to Use AI Vision Sensor</h3>
+                        <ul>
+                            <li>Mount the sensor facing forward with an unobstructed line of sight across the field.</li>
+                            <li>Connect the unit to a smart port and open the configuration utility to train visual signatures.</li>
+                            <li>Write code blocks to track recognized object coordinates or AprilTag ID values during matches.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="right-column">
+                    <div class="info-box">
+                        <h3>Core Technical Specifications & Architecture</h3>
+                        <ul>
+                            <li>Pre-trained machine learning object signatures for common items (cubes, balls, rings).</li>
+                            <li>Real-time X/Y coordinate frame metric tracking for precise target centering.</li>
+                            <li>AprilTag matrix identification supporting standard ID codes (0–37) with advanced 3D math.</li>
+                            <li>Onboard neural processor capable of filtering multiple distinct visual signatures simultaneously.</li>
+                        </ul>
+                    </div>
+                    <div class="info-box">
+                        <h3>Primary Operational Uses</h3>
+                        <p>Processes real-time optical video data to recognize specific item categories, compute spatial distance matrices, and find target orientation tags autonomously without human intervention.</p>
+                    </div>
+                    <div class="info-box">
+                        <h3>Practical Real-World Example</h3>
+                        <p>Scanning the playing field for an AprilTag ID identifier code to automatically calculate position offsets and align the robot's heading directly toward a goal zone.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
