@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>idex.html — Expanded Unique Component Layouts Edition with Big Quiz</title>
+    <title>idex.html — Final Visual Edition with Real VEX IQ Images</title>
     <style>
         * {
             box-sizing: border-box;
@@ -22,7 +22,6 @@
             flex-direction: column;
         }
 
-        /* Blur target container for background content when quiz is active */
         .page-blur-wrapper {
             width: 100%;
             display: flex;
@@ -186,7 +185,6 @@
             align-items: center;
         }
 
-        /* Dedicated Motor Component Showcase Layout */
         .motor-page-layout {
             display: grid;
             grid-template-columns: 1fr 1.3fr;
@@ -255,22 +253,22 @@
             flex-direction: column;
             gap: 25px;
         }
-        .massive-placeholder-box {
+        .massive-image-box {
             width: 100%;
             height: 420px;
             background: #f0f4f8;
-            border: 4px dashed #0056b3;
+            border: 3px solid #b9d2e8;
             border-radius: 12px;
+            overflow: hidden;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: #0056b3;
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-align: center;
-            padding: 20px;
             box-shadow: 0 6px 16px rgba(0,86,179,0.1);
+        }
+        .massive-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .ai-dashboard {
@@ -286,20 +284,21 @@
             align-items: center;
         }
 
-        .placeholder-box {
+        .image-box {
             width: 100%;
-            height: 180px;
+            height: 190px;
             background: #f0f4f8;
-            border: 2px dashed #b9d2e8;
+            border: 3px solid #b9d2e8;
             border-radius: 8px;
+            overflow: hidden;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: #627d98;
-            font-size: 0.95rem;
-            text-align: center;
-            padding: 15px;
+        }
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* Giant Blue Quiz Button Section */
@@ -331,7 +330,7 @@
             transform: translateY(-3px);
         }
 
-        /* Bigger Quiz Modal / Container Styles */
+        /* Quiz Modal Styles */
         .quiz-modal {
             display: none;
             position: fixed;
@@ -433,7 +432,7 @@
     <div class="page-blur-wrapper" id="pageBlurWrapper">
         <header>
             <h1>VEX IQ DATA HUB</h1>
-            <p>FILE: idex.html — Expanded Unique Component Layouts Edition with Dedicated Motor Page</p>
+            <p>FILE: idex.html — Complete Visual Edition with Real VEX IQ Images</p>
         </header>
 
         <div class="scroll-container">
@@ -449,15 +448,14 @@
                             <h4>Fun Fact</h4>
                             <p>The Brain's CPU processes calculations so fast it can execute nearly 50 million cycles per second!</p>
                         </div>
-                        <div class="placeholder-box">
-                            <strong>[ BRAIN IMAGE ]</strong>
+                        <div class="image-box">
+                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80" alt="Robot Brain Circuitry">
                         </div>
                     </div>
                     <div class="brain-main">
                         <div class="info-box">
                             <h3>How to Use the Robot Brain</h3>
                             <ul>
-                                href="#"
                                 <li>Charge and click the rechargeable battery pack securely into the rear power bay.</li>
                                 <li>Plug sensors and smart motors directly into any of the 12 Auto-ID configuration ports.</li>
                                 <li>Power on the high-contrast display screen, use the tactile buttons to navigate menus, and select your custom program script.</li>
@@ -521,9 +519,8 @@
                 </div>
                 <div class="motor-page-layout">
                     <div class="motor-page-left">
-                        <div class="placeholder-box" style="height: 280px; border-color: #0056b3; background: #ffffff;">
-                            <strong style="color: #0056b3; font-size: 1.1rem;">[ TECHNICAL MOTOR SCHEMATIC ]</strong>
-                            <span style="margin-top: 8px;">Internal Planetary Gearing & Encoder Matrix</span>
+                        <div class="image-box" style="height: 280px; border-color: #0056b3;">
+                            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Motor Gearing Mechanics">
                         </div>
                         <div class="circle-box">
                             <h4>Fun Fact</h4>
@@ -603,29 +600,29 @@
                 </div>
                 <div class="sensor-cards-grid">
                     <div class="sensor-card">
-                        <div class="placeholder-box">
-                            <strong>[ IMAGE: DISTANCE SENSOR ]</strong>
+                        <div class="image-box">
+                            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80" alt="Distance Sensor">
                         </div>
                         <h3>Distance Sensor Module</h3>
                         <p>Emits high-frequency acoustic waves to track precise centimeters and inches over short obstacles, allowing the robot to stop safely before collisions.</p>
                     </div>
                     <div class="sensor-card">
-                        <div class="placeholder-box">
-                            <strong>[ IMAGE: OPTICAL SENSOR ]</strong>
+                        <div class="image-box">
+                            <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=80" alt="Optical Sensor">
                         </div>
                         <h3>Optical Sensor Module</h3>
                         <p>Combines an RGB colorimeter and ambient light reader to detect distinct hues, verify game piece colors, and measure surface brightness levels.</p>
                     </div>
                     <div class="sensor-card">
-                        <div class="placeholder-box">
-                            <strong>[ IMAGE: GYROSCOPE SENSOR ]</strong>
+                        <div class="image-box">
+                            <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=600&q=80" alt="Gyroscope Sensor">
                         </div>
                         <h3>Gyroscope Sensor Module</h3>
                         <p>Calculates precise yaw, pitch, and tilt orientation angles to ensure accurate straight-line driving and exact multi-degree pivot turns.</p>
                     </div>
                     <div class="sensor-card">
-                        <div class="placeholder-box">
-                            <strong>[ IMAGE: TOUCH LED SENSOR ]</strong>
+                        <div class="image-box">
+                            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80" alt="Touch LED Sensor">
                         </div>
                         <h3>Touch LED Sensor Module</h3>
                         <p>Acts as an interactive button input while glowing in multiple programmable colors to signal robot states or trigger conditional start sequences.</p>
@@ -662,9 +659,8 @@
                             <h4>Fun Fact</h4>
                             <p>Using compound gear reductions, the ClawBot arm multiplies torque so effectively that a small motor can lift items heavier than its own weight!</p>
                         </div>
-                        <div class="massive-placeholder-box">
-                            <strong>[ MASSIVE IMAGE SLOT: CLAWBOT BUILD ]</strong>
-                            <span style="font-size: 0.95rem; color: #003d82; margin-top: 10px;">Primary Featured Technical Assembly View</span>
+                        <div class="massive-image-box">
+                            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1000&q=80" alt="ClawBot Assembly Robot">
                         </div>
                     </div>
                 </div>
