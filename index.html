@@ -5,41 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>idex.html</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
             background-color: #ffffff;
             color: #000000;
             margin: 0;
             padding: 0;
+            width: 100vw;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
         }
 
         header {
-            background-color: #f4f4f4;
-            padding: 20px;
-            text-align: center;
-            border-bottom: 2px solid #ddd;
+            background-color: #f0f0f0;
+            width: 100%;
+            padding: 30px 50px;
+            text-align: left;
+            border-bottom: 2px solid #ccc;
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: #111;
         }
 
         header p {
-            margin: 5px 0 0;
-            color: #666;
-            font-size: 1rem;
+            margin: 10px 0 0;
+            color: #555;
+            font-size: 1.2rem;
         }
 
         .tab-container {
-            flex: 1;
             width: 100%;
-            padding: 40px;
-            box-sizing: border-box;
+            flex: 1;
+            padding: 50px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -47,8 +52,6 @@
 
         .tab-content {
             display: none;
-            max-width: 1200px;
-            margin: 0 auto;
             width: 100%;
         }
 
@@ -57,102 +60,100 @@
         }
 
         .tab-header {
-            border-bottom: 2px solid #333;
-            padding-bottom: 15px;
-            margin-bottom: 30px;
+            border-bottom: 2px solid #000;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+            width: 100%;
         }
 
         .tab-content h2 {
-            margin: 0 0 10px 0;
-            font-size: 2.2rem;
-            color: #111;
+            margin: 0 0 15px 0;
+            font-size: 2.8rem;
+            color: #000;
         }
 
         .subtitle {
             margin: 0;
-            font-size: 1.1rem;
-            color: #555;
+            font-size: 1.4rem;
+            color: #444;
         }
 
         .layout-grid {
             display: flex;
-            gap: 40px;
-            flex-wrap: wrap;
+            width: 100%;
+            gap: 50px;
             align-items: flex-start;
         }
 
         .image-placeholder {
             flex: 1;
-            min-width: 300px;
-            height: 350px;
-            background: #f9f9f9;
-            border: 2px dashed #ccc;
+            height: 450px;
+            background: #fafafa;
+            border: 3px dashed #999;
             border-radius: 8px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 20px;
-            box-sizing: border-box;
+            padding: 30px;
         }
 
         .image-placeholder span {
-            color: #666;
-            font-size: 0.9rem;
-            margin-top: 10px;
+            color: #555;
+            font-size: 1rem;
+            margin-top: 15px;
         }
 
         .info-sections {
             flex: 1.5;
-            min-width: 300px;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 25px;
         }
 
         .info-box {
-            background: #fdfdfd;
-            border: 1px solid #ddd;
-            border-left: 5px solid #0066cc;
-            padding: 20px;
+            background: #ffffff;
+            border: 1px solid #ccc;
+            border-left: 8px solid #000000;
+            padding: 25px;
             border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
         .info-box h3 {
-            margin: 0 0 10px 0;
-            font-size: 1.2rem;
-            color: #0066cc;
+            margin: 0 0 12px 0;
+            font-size: 1.4rem;
+            color: #000;
         }
 
         .info-box p, .info-box ul {
             margin: 0;
-            font-size: 1rem;
-            color: #333;
-            line-height: 1.5;
+            font-size: 1.1rem;
+            color: #222;
+            line-height: 1.6;
         }
 
         .info-box ul {
-            padding-left: 20px;
+            padding-left: 25px;
         }
 
         .navigation {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 40px auto 0 auto;
             width: 100%;
-            border-top: 1px solid #ddd;
-            padding-top: 20px;
+            margin-top: 50px;
+            border-top: 2px solid #ccc;
+            padding-top: 30px;
         }
 
         .nav-btn {
-            background-color: #0066cc;
+            background-color: #000000;
             color: #ffffff;
             border: none;
-            padding: 12px 30px;
-            font-size: 1rem;
+            padding: 15px 40px;
+            font-size: 1.2rem;
             font-weight: bold;
             cursor: pointer;
             border-radius: 4px;
@@ -160,13 +161,13 @@
         }
 
         .nav-btn:hover {
-            background-color: #004999;
+            background-color: #333333;
         }
 
         .page-indicator {
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             font-weight: bold;
-            color: #333;
+            color: #000;
         }
     </style>
 </head>
@@ -186,26 +187,26 @@
             </div>
             <div class="layout-grid">
                 <div class="image-placeholder">
-                    <img src="placeholder-brain.png" alt="Robot Brain" style="max-width:100%; max-height:200px; display:none;">
-                    <strong>[ IMAGE SLOT: BRAIN ]</strong>
+                    <img src="placeholder-brain.png" alt="Robot Brain" style="max-width:100%; max-height:250px; display:none;">
+                    <strong style="font-size: 1.2rem;">[ IMAGE SLOT: BRAIN ]</strong>
                     <span>Upload your image and link it here</span>
                 </div>
                 <div class="info-sections">
                     <div class="info-box">
                         <h3>Core Stats</h3>
                         <ul>
-                            <li>ARM Cortex Controller</li>
-                            <li>12 Auto-ID Smart Ports</li>
-                            <li>Backlit LCD Screen & Interface</li>
+                            <li>ARM Cortex Controller architecture</li>
+                            <li>12 Auto-ID Smart Ports for instant component recognition</li>
+                            <li>Backlit LCD Screen for diagnostics and program launching</li>
                         </ul>
                     </div>
                     <div class="info-box">
                         <h3>Primary Uses</h3>
-                        <p>Processes user code, interprets smart sensor telemetry, and sends power signals to connected motors.</p>
+                        <p>Processes user code instructions, interprets live telemetry data sent from connected smart sensors, and dynamically regulates power distribution to motors.</p>
                     </div>
                     <div class="info-box">
                         <h3>Real-World Example</h3>
-                        <p>Executing an autonomous navigation routine by reading gyroscope heading values while regulating drive speed.</p>
+                        <p>Executing an automated obstacle-navigation routine by reading continuous heading values from an internal gyroscope while actively adjusting motor speeds to travel in a straight line.</p>
                     </div>
                 </div>
             </div>
@@ -218,26 +219,26 @@
             </div>
             <div class="layout-grid">
                 <div class="image-placeholder">
-                    <img src="placeholder-motor.png" alt="Smart Motors" style="max-width:100%; max-height:200px; display:none;">
-                    <strong>[ IMAGE SLOT: MOTORS ]</strong>
+                    <img src="placeholder-motor.png" alt="Smart Motors" style="max-width:100%; max-height:250px; display:none;">
+                    <strong style="font-size: 1.2rem;">[ IMAGE SLOT: MOTORS ]</strong>
                     <span>Upload your image and link it here</span>
                 </div>
                 <div class="info-sections">
                     <div class="info-box">
                         <h3>Core Stats</h3>
                         <ul>
-                            <li>0 to 100 RPM Speed Range</li>
-                            <li>Built-in Degree & Rotation Tracking</li>
-                            <li>Integrated Auto-Stall Protection</li>
+                            <li>Variable speed regulation from 0 to 100 RPM</li>
+                            <li>Integrated optical encoder tracking degrees and rotations</li>
+                            <li>Built-in electronic circuit protection against motor stalls</li>
                         </ul>
                     </div>
                     <div class="info-box">
                         <h3>Primary Uses</h3>
-                        <p>Drives wheel chassis movement and operates mechanical actuators like arms, lifters, and intake rollers.</p>
+                        <p>Drives the main wheel chassis across competitive playing fields and operates mechanical attachments like lifting arms, sorting gates, and roller intake mechanisms.</p>
                     </div>
                     <div class="info-box">
                         <h3>Real-World Example</h3>
-                        <p>Rotating precisely 360 degrees to lift a game piece container off the floor to a scoring platform.</p>
+                        <p>Rotating an actuator mechanism precisely 360 degrees to lift a heavy game element container off the floor onto an elevated scoring platform.</p>
                     </div>
                 </div>
             </div>
@@ -250,26 +251,26 @@
             </div>
             <div class="layout-grid">
                 <div class="image-placeholder">
-                    <img src="placeholder-basebot.png" alt="BaseBot Setup" style="max-width:100%; max-height:200px; display:none;">
-                    <strong>[ IMAGE SLOT: BASEBOT ]</strong>
+                    <img src="placeholder-basebot.png" alt="BaseBot Setup" style="max-width:100%; max-height:250px; display:none;">
+                    <strong style="font-size: 1.2rem;">[ IMAGE SLOT: BASEBOT ]</strong>
                     <span>Upload your image and link it here</span>
                 </div>
                 <div class="info-sections">
                     <div class="info-box">
                         <h3>Core Stats</h3>
                         <ul>
-                            <li>2-Motor Tank Drive Layout</li>
-                            <li>Omnidirectional Support Wheels</li>
-                            <li>Compact Structural Beam Chassis</li>
+                            <li>2-Motor independent tank-drive configuration</li>
+                            <li>Omnidirectional support wheels for smooth turning radiuses</li>
+                            <li>Rigid structural plastic beam chassis framework</li>
                         </ul>
                     </div>
                     <div class="info-box">
                         <h3>Primary Uses</h3>
-                        <p>Teaches foundational driving physics, turning dynamics, straight-line adjustments, and coordinate movement.</p>
+                        <p>Teaches foundational driving physics, turning dynamics, friction management, and coordinate-based navigation in competitive robotics environments.</p>
                     </div>
                     <div class="info-box">
                         <h3>Real-World Example</h3>
-                        <p>Navigating a rectangular obstacle course by turning exactly 90 degrees at each corner coordinate.</p>
+                        <p>Navigating a complex square obstacle course by executing precise 90-degree pivot turns at designated field coordinate intersections.</p>
                     </div>
                 </div>
             </div>
@@ -282,27 +283,121 @@
             </div>
             <div class="layout-grid">
                 <div class="image-placeholder">
-                    <img src="placeholder-sensors.png" alt="Core Sensors" style="max-width:100%; max-height:200px; display:none;">
-                    <strong>[ IMAGE SLOT: SENSORS ]</strong>
+                    <img src="placeholder-sensors.png" alt="Core Sensors" style="max-width:100%; max-height:250px; display:none;">
+                    <strong style="font-size: 1.2rem;">[ IMAGE SLOT: SENSORS ]</strong>
                     <span>Upload your image and link it here</span>
                 </div>
                 <div class="info-sections">
                     <div class="info-box">
                         <h3>Core Stats</h3>
                         <ul>
-                            <li>Ultrasonic Distance tracking (cm/inches)</li>
-                            <li>Color, Hue, and Ambient light detection</li>
-                            <li>Yaw, Pitch, and Tilt angle calculation</li>
+                            <li>Ultrasonic distance tracking measuring centimeters and inches</li>
+                            <li>Optical hardware for color, hue, and ambient light detection</li>
+                            <li>High-accuracy yaw, pitch, and tilt angle calculation</li>
                         </ul>
                     </div>
                     <div class="info-box">
                         <h3>Primary Uses</h3>
-                        <p>Gives the robot environmental awareness to detect walls, track surfaces, and measure orientation angles.</p>
+                        <p>Provides the robot with comprehensive environmental awareness to detect boundary walls, sort colored objects, and track spatial orientation angles.</p>
                     </div>
                     <div class="info-box">
                         <h3>Real-World Example</h3>
-                        <p>Using the Distance sensor to stop the robot 5 inches away from a wall before reversing direction.</p>
+                        <p>Using the Distance sensor to continuously monitor approach vectors and halt the robot exactly five inches away from a perimeter wall.</p>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="tab-content" id="tab-5">
+            <div class="tab-header">
+                <h2>ClawBot Build</h2>
+                <p class="subtitle">Advanced Manipulator Configuration</p>
+            </div>
+            <div class="layout-grid">
+                <div class="image-placeholder">
+                    <img src="placeholder-clawbot.png" alt="ClawBot Build" style="max-width:100%; max-height:250px; display:none;">
+                    <strong style="font-size: 1.2rem;">[ IMAGE SLOT: CLAWBOT ]</strong>
+                    <span>Upload your image and link it here</span>
+                </div>
+                <div class="info-sections">
+                    <div class="info-box">
+                        <h3>Core Stats</h3>
+                        <ul>
+                            <li>High-mechanical advantage gear-ratio arm lift system</li>
+                            <li>Pincer-grip end effector for secure object transport</li>
+                            <li>Counter-balanced chassis weight distribution to prevent tipping</li>
+                        </ul>
+                    </div>
+                    <div class="info-box">
+                        <h3>Primary Uses</h3>
+                        <p>Engineered specifically for competitive arena sorting tasks, gripping objects securely, and lifting camp items across high barrier zones.</p>
+                    </div>
+                    <div class="info-box">
+                        <h3>Real-World Example</h3>
+                        <p>Closing the mechanical pincer around a scoring cube, elevating the arm mechanism to clear field barriers, and transporting the item across the zone.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="tab-6">
+            <div class="tab-header">
+                <h2>AI Vision Sensor</h2>
+                <p class="subtitle">Neural Processing and Spatial Target Tracking</p>
+            </div>
+            <div class="layout-grid">
+                <div class="image-placeholder">
+                    <img src="placeholder-ai.png" alt="AI Vision Sensor" style="max-width:100%; max-height:250px; display:none;">
+                    <strong style="font-size: 1.2rem;">[ IMAGE SLOT: AI SENSOR ]</strong>
+                    <span>Upload your image and link it here</span>
+                </div>
+                <div class="info-sections">
+                    <div class="info-box">
+                        <h3>Core Stats</h3>
+                        <ul>
+                            <li>Pre-trained machine learning object signatures (cubes, balls, rings)</li>
+                            <li>Real-time X/Y coordinate frame metric tracking</li>
+                            <li>AprilTag matrix identification supporting standard ID codes (0–37)</li>
+                        </ul>
+                    </div>
+                    <div class="info-box">
+                        <h3>Primary Uses</h3>
+                        <p>Processes real-time optical video data to recognize specific item categories, compute spatial distance matrices, and find target orientation tags autonomously.</p>
+                    </div>
+                    <div class="info-box">
+                        <h3>Real-World Example</h3>
+                        <p>Scanning the playing field for an AprilTag ID identifier code to automatically calculate position offsets and align the robot's heading toward a goal zone.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <button class="nav-btn" onclick="changeTab(-1)">PREV</button>
+            <span class="page-indicator" id="indicator">Page 1 of 6</span>
+            <button class="nav-btn" onclick="changeTab(1)">NEXT</button>
+        </div>
+
+    </div>
+
+    <script>
+        let currentTab = 1;
+        const totalTabs = 6;
+
+        function changeTab(direction) {
+            document.getElementById(`tab-${currentTab}`).classList.remove('active');
+            
+            currentTab += direction;
+            if (currentTab > totalTabs) {
+                currentTab = 1;
+            } else if (currentTab < 1) {
+                currentTab = totalTabs;
+            }
+
+            document.getElementById(`tab-${currentTab}`).classList.add('active');
+            document.getElementById('indicator').innerText = `Page ${currentTab} of ${totalTabs}`;
+        }
+    </script>
+
+</body>
+</html>
