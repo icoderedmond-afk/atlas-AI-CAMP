@@ -38,13 +38,12 @@
 
         .tab-container {
             width: 100%;
-            max-width: 700px;
+            max-width: 850px;
             background: #111;
             border: 2px solid #ff00ff;
             border-radius: 12px;
-            padding: 30px;
+            padding: 35px;
             box-shadow: 0 0 25px rgba(191, 0, 255, 0.4);
-            position: relative;
             box-sizing: border-box;
         }
 
@@ -56,158 +55,99 @@
             display: block;
         }
 
+        .tab-header {
+            border-bottom: 1px dashed #39ff14;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
         .tab-content h2 {
             color: #0ff0fc;
             text-shadow: 0 0 8px #0ff0fc;
-            margin-top: 0;
-            border-bottom: 1px dashed #39ff14;
-            padding-bottom: 10px;
+            margin: 0 0 5px 0;
+            font-size: 1.8rem;
         }
 
-        .data-list {
-            list-style-type: none;
-            padding: 0;
+        .subtitle {
+            color: #ff007f;
+            text-shadow: 0 0 5px rgba(255, 0, 127, 0.5);
+            margin: 0;
+            font-size: 0.95rem;
         }
 
-        .data-list li {
-            margin: 15px 0;
-            padding-left: 15px;
-            border-left: 3px solid #ff007f;
+        .layout-grid {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            align-items: flex-start;
         }
 
-        .data-list strong {
+        .image-placeholder {
+            flex: 1;
+            min-width: 250px;
+            height: 220px;
+            background: #050505;
+            border: 2px solid #39ff14;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 15px;
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.2);
+        }
+
+        .image-placeholder span {
             color: #39ff14;
             text-shadow: 0 0 5px rgba(57, 255, 20, 0.5);
+            font-size: 0.85rem;
+            margin-top: 10px;
+        }
+
+        .info-sections {
+            flex: 1.5;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .info-box {
+            background: rgba(0, 0, 0, 0.4);
+            border-left: 3px solid #ff00ff;
+            padding: 12px 15px;
+            border-radius: 0 6px 6px 0;
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.1);
+        }
+
+        .info-box h3 {
+            color: #ff00ff;
+            text-shadow: 0 0 5px rgba(255, 0, 255, 0.5);
+            margin: 0 0 5px 0;
+            font-size: 1rem;
+        }
+
+        .info-box p, .info-box ul {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #ddd;
+        }
+
+        .info-box ul {
+            padding-left: 15px;
         }
 
         .navigation {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 25px;
+            margin-top: 30px;
+            border-top: 1px solid #222;
+            padding-top: 20px;
         }
 
         .nav-btn {
             background-color: #050505;
             color: #ff00ff;
-            border: 2px solid #ff00ff;
-            padding: 10px 20px;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
-            transition: 0.2s;
-        }
-
-        .nav-btn:hover {
-            background-color: #ff00ff;
-            color: #050505;
-            box-shadow: 0 0 20px rgba(255, 0, 255, 0.8);
-        }
-
-        .page-indicator {
-            color: #39ff14;
-            text-shadow: 0 0 5px rgba(57, 255, 20, 0.5);
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <h1>VEX IQ DATA HUB</h1>
-        <p>SYSTEM STATUS: ONLINE | FILE: idex.html</p>
-    </header>
-
-    <div class="tab-container">
-        
-        <div class="tab-content active" id="tab-1">
-            <h2>Robot Brain</h2>
-            <ul class="data-list">
-                <li><strong>Processor:</strong> ARM Cortex Controller</li>
-                <li><strong>Display:</strong> Backlit LCD Screen</li>
-                <li><strong>Ports:</strong> 12 Auto-ID Smart Ports</li>
-                <li><strong>Power:</strong> Rechargeable Li-Ion Battery Pack</li>
-            </ul>
-        </div>
-
-        <div class="tab-content" id="tab-2">
-            <h2>Smart Motors</h2>
-            <ul class="data-list">
-                <li><strong>Speed:</strong> 0 to 100 RPM Control</li>
-                <li><strong>Feedback:</strong> Built-in Rotation & Degree Tracking</li>
-                <li><strong>Torque:</strong> High-power internal gearing</li>
-                <li><strong>Safety:</strong> Auto-stall protection circuit</li>
-            </ul>
-        </div>
-
-        <div class="tab-content" id="tab-3">
-            <h2>BaseBot Setup</h2>
-            <ul class="data-list">
-                <li><strong>Drivetrain:</strong> 2-Motor Tank Drive</li>
-                <li><strong>Wheels:</strong> 200mm Omnidirectional / Standard</li>
-                <li><strong>Chassis:</strong> Compact beam configuration</li>
-                <li><strong>Purpose:</strong> Fundamental navigation & turning</li>
-            </ul>
-        </div>
-
-        <div class="tab-content" id="tab-4">
-            <h2>Core Sensors</h2>
-            <ul class="data-list">
-                <li><strong>Distance:</strong> Measures cm/inches using ultrasonic waves</li>
-                <li><strong>Optical:</strong> Detects color, hue, and ambient light</li>
-                <li><strong>Gyro:</strong> Tracks exact yaw, pitch, and tilt angles</li>
-                <li><strong>Touch LED:</strong> Programmable state button & indicator</li>
-            </ul>
-        </div>
-
-        <div class="tab-content" id="tab-5">
-            <h2>ClawBot Build</h2>
-            <ul class="data-list">
-                <li><strong>Arm Motor:</strong> Dedicated gear-ratio lift system</li>
-                <li><strong>Claw Mechanism:</strong> Pincer grip for object transport</li>
-                <li><strong>Stability:</strong> Counter-balanced chassis weight</li>
-                <li><strong>Use Case:</strong> Scoring objects & arena sorting</li>
-            </ul>
-        </div>
-
-        <div class="tab-content" id="tab-6">
-            <h2>AI Vision Sensor</h2>
-            <ul class="data-list">
-                <li><strong>Object Detection:</strong> Pre-trained signatures (Cubes, Balls, Rings)</li>
-                <li><strong>Metrics:</strong> Live X/Y coordinate tracking</li>
-                <li><strong>Tag Range:</strong> Standard 2D Matrix AprilTag IDs (0–37)</li>
-                <li><strong>Precision:</strong> 3D spatial orientation calculation</li>
-            </ul>
-        </div>
-
-        <div class="navigation">
-            <button class="nav-btn" onclick="changeTab(-1)">&#9664; PREV</button>
-            <span class="page-indicator" id="indicator">Page 1 of 6</span>
-            <button class="nav-btn" onclick="changeTab(1)">NEXT &#9654;</button>
-        </div>
-
-    </div>
-
-    <script>
-        let currentTab = 1;
-        const totalTabs = 6;
-
-        function changeTab(direction) {
-            document.getElementById(`tab-${currentTab}`).classList.remove('active');
-            
-            currentTab += direction;
-            if (currentTab > totalTabs) {
-                currentTab = 1;
-            } else if (currentTab < 1) {
-                currentTab = totalTabs;
-            }
-
-            document.getElementById(`tab-${currentTab}`).classList.add('active');
-            document.getElementById('indicator').innerText = `Page ${currentTab} of ${totalTabs}`;
-        }
-    </script>
-
-</body>
-</html>
+            border: 2px solid #ff00
