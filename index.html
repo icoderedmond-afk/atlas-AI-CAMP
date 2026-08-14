@@ -100,7 +100,7 @@
 
         .image-placeholder {
             width: 100%;
-            height: 350px;
+            height: 280px;
             background: #fafafa;
             border: 3px dashed #999;
             border-radius: 8px;
@@ -118,168 +118,13 @@
             margin-top: 10px;
         }
 
-        .caption-box {
-            background: #f7f7f7;
-            border: 1px solid #ccc;
-            padding: 20px;
-            border-radius: 4px;
-        }
-
-        .caption-box h4 {
-            margin: 0 0 8px 0;
-            font-size: 1.2rem;
-            color: #000;
-        }
-
-        .caption-box p {
-            margin: 0;
-            font-size: 1.05rem;
-            color: #333;
-            line-height: 1.5;
-        }
-
-        .info-box {
-            background: #ffffff;
-            border: 1px solid #ccc;
-            border-left: 8px solid #000000;
-            padding: 22px 25px;
-            border-radius: 4px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        .info-box h3 {
-            margin: 0 0 12px 0;
-            font-size: 1.35rem;
-            color: #000;
-        }
-
-        .info-box p, .info-box ul {
-            margin: 0;
-            font-size: 1.05rem;
-            color: #222;
-            line-height: 1.6;
-        }
-
-        .info-box ul {
-            padding-left: 20px;
-        }
-
-        .info-box li {
-            margin-bottom: 8px;
-        }
-
-        .navigation {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        /* Semi-circle Fun Fact Box */
+        .semi-circle-box {
             width: 100%;
-            margin-top: 40px;
-            border-top: 2px solid #ccc;
-            padding-top: 30px;
-        }
-
-        .nav-btn {
-            background-color: #000000;
-            color: #ffffff;
-            border: none;
-            padding: 16px 45px;
-            font-size: 1.25rem;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: background-color 0.2s;
-        }
-
-        .nav-btn:hover {
-            background-color: #333333;
-        }
-
-        .page-indicator {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: #000;
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <h1>VEX IQ DATA HUB</h1>
-        <p>FILE: idex.html</p>
-    </header>
-
-    <div class="tab-container">
-        
-        <div class="tab-content active" id="tab-1">
-            <div class="tab-header">
-                <h2>Robot Brain</h2>
-                <p class="subtitle">The Central Processing Unit and Core Controller of the VEX IQ System</p>
-            </div>
-            <div class="layout-grid">
-                <div class="left-column">
-                    <div class="image-placeholder">
-                        <img src="placeholder-brain.png" alt="Robot Brain" style="max-width:100%; max-height:220px; display:none;">
-                        <strong style="font-size: 1.1rem;">[ IMAGE SLOT: BRAIN ]</strong>
-                        <span>Upload your image and link it here</span>
-                    </div>
-                    <div class="caption-box">
-                        <h4>Figure 1.1: Brain Hardware Unit</h4>
-                        <p>Shows the front backlit user interface display, central CPU casing, and side connection banks designed for modular expandability.</p>
-                    </div>
-                    <div class="info-box">
-                        <h3>Hardware Diagnostics</h3>
-                        <p>The system check screen displays internal board health, port voltage parameters, and live firmware version numbers during startup sequences.</p>
-                    </div>
-                </div>
-                <div class="right-column">
-                    <div class="info-box">
-                        <h3>Core Technical Specifications & Architecture</h3>
-                        <ul>
-                            <li>Powered by an advanced ARM Cortex internal processing controller</li>
-                            <li>Equipped with 12 distinct Auto-ID Smart Ports that instantly configure connected hardware components</li>
-                            <li>Features a high-contrast backlit LCD screen for live debugging, battery tracking, and program launching</li>
-                            <li>Includes expandable memory capacity to store multiple complex user programs simultaneously</li>
-                        </ul>
-                    </div>
-                    <div class="info-box">
-                        <h3>Primary Operational Uses</h3>
-                        <p>The Brain acts as the central nerve center. It reads user-written block or Python code instructions, interprets incoming telemetry data streams from smart sensors, and dynamically calculates power distribution parameters sent directly out to motorized outputs.</p>
-                    </div>
-                    <div class="info-box">
-                        <h3>Practical Real-World Example</h3>
-                        <p>During an autonomous maze navigation trial, the Brain continuously reads orientation values from an internal gyroscope while simultaneously regulating individual motor speeds to ensure the robot maintains a perfectly straight trajectory across the field surface.</p>
-                    </div>
-                    <div class="info-box">
-                        <h3>Advanced Camp Troubleshooting Tips</h3>
-                        <p>Always verify that port connection cables click securely into place. If a device fails to register, check the Brain's device info screen to ensure the Auto-ID system recognizes the port address properly before running code execution trials.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="tab-content" id="tab-2">
-            <div class="tab-header">
-                <h2>Smart Motors</h2>
-                <p class="subtitle">High-Torque Actuation, Internal Encoders, and Precise Position Control</p>
-            </div>
-            <div class="layout-grid">
-                <div class="left-column">
-                    <div class="image-placeholder">
-                        <img src="placeholder-motor.png" alt="Smart Motors" style="max-width:100%; max-height:220px; display:none;">
-                        <strong style="font-size: 1.1rem;">[ IMAGE SLOT: MOTORS ]</strong>
-                        <span>Upload your image and link it here</span>
-                    </div>
-                    <div class="caption-box">
-                        <h4>Figure 2.1: Smart Motor Assembly</h4>
-                        <p>Details the internal planetary gearbox, rotation sensor encoder wheel, and electronic port connection interface.</p>
-                    </div>
-                    <div class="info-box">
-                        <h3>Encoder Calibration</h3>
-                        <p>Rotation values reset automatically on boot, allowing precise degree-based movement loops without slippage errors.</p>
-                    </div>
-                </div>
-                <div class="right-column">
-                    <div class="info-box">
-                        <h3>Core Technical Specifications & Architecture</h3>
-                        <ul>
-                            <li>Provides precise variable speed regulation ranging from 0 up to 100 RPM
+            background: #f4f4f4;
+            border: 1px solid #ccc;
+            border-bottom-left-radius: 120px;
+            border-bottom-right-radius: 120px;
+            padding: 25px 30px;
+            text-align: center;
+            box-shadow: inset
