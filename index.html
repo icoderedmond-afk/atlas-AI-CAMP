@@ -192,4 +192,327 @@
         }
 
         /* Unique Layout 4: Sensors (Multi-Sensor Breakdown Grid with dedicated image placeholders) */
-        .sensor
+        .sensor-header-row {
+            display: grid;
+            grid-template-columns: 1fr 240px;
+            gap: 25px;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        .sensor-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+        .sensor-card {
+            background: #f8fbff;
+            border: 1px solid #b9d2e8;
+            border-left: 8px solid #0056b3;
+            padding: 24px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* Unique Layout 5: ClawBot (Massive Image Spotlight) */
+        .clawbot-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 35px;
+            align-items: center;
+        }
+        .clawbot-left, .clawbot-right {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        .massive-placeholder-box {
+            width: 100%;
+            height: 420px;
+            background: #f0f4f8;
+            border: 4px dashed #0056b3;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #0056b3;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 6px 16px rgba(0,86,179,0.1);
+        }
+
+        /* Unique Layout 6: AI Vision */
+        .ai-dashboard {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+        .ai-full-width {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .placeholder-box {
+            width: 100%;
+            height: 180px;
+            background: #f0f4f8;
+            border: 2px dashed #b9d2e8;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #627d98;
+            font-size: 0.95rem;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>VEX IQ DATA HUB</h1>
+        <p>FILE: idex.html — Expanded Unique Component Layouts Edition</p>
+    </header>
+
+    <div class="scroll-container">
+        
+        <div class="section-block" id="section-brain">
+            <div class="section-header">
+                <h2>Robot Brain</h2>
+                <p class="subtitle">The Central Processing Unit and Core Controller of the VEX IQ System</p>
+            </div>
+            <div class="layout-brain">
+                <div class="brain-sidebar">
+                    <div class="circle-box">
+                        <h4>Fun Fact</h4>
+                        <p>The Brain's CPU processes calculations so fast it can execute nearly 50 million cycles per second!</p>
+                    </div>
+                    <div class="placeholder-box">
+                        <strong>[ BRAIN IMAGE ]</strong>
+                    </div>
+                </div>
+                <div class="brain-main">
+                    <div class="info-box">
+                        <h3>How to Use the Robot Brain</h3>
+                        <ul>
+                            <li>Charge and click the rechargeable battery pack securely into the rear power bay.</li>
+                            <li>Plug sensors and smart motors directly into any of the 12 Auto-ID configuration ports.</li>
+                            <li>Power on the high-contrast display screen, use the tactile buttons to navigate menus, and select your custom program script.</li>
+                        </ul>
+                    </div>
+                    <div class="info-box">
+                        <h3>Core Technical Specifications & Architecture</h3>
+                        <p>Powered by an advanced ARM Cortex controller chip with 12 distinct Auto-ID Smart Ports that instantly identify connected hardware components, featuring a backlit LCD diagnostic interface and expandable memory blocks.</p>
+                    </div>
+                    <div class="info-box">
+                        <h3>Real-World Autonomous Application</h3>
+                        <p>During competitive maze trials, the Brain reads real-time gyro telemetry and continuously regulates motor power outputs to preserve a perfectly straight trajectory across tournament field floor tiles.</p>
+                    </div>
+                    <div class="info-box">
+                        <h3>Advanced Diagnostic Safeguards</h3>
+                        <p>Includes internal voltage regulation and thermal monitoring to automatically shut down power circuits if a short circuit or dangerous current spike occurs during intensive tournament matches.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-block" id="section-motors">
+            <div class="section-header">
+                <h2>Smart Motors</h2>
+                <p class="subtitle">High-Torque Actuation, Internal Encoders, and Precise Position Control</p>
+            </div>
+            <div class="motor-grid">
+                <div class="info-box">
+                    <h3>Speed & Power</h3>
+                    <p>Provides precise variable speed regulation ranging from 0 up to 100 RPM with high-torque planetary gearing configurations.</p>
+                </div>
+                <div class="info-box">
+                    <h3>Optical Encoders</h3>
+                    <p>Built-in rotation sensors track exact degrees and cumulative rotations independently for pinpoint autonomous driving accuracy.</p>
+                </div>
+                <div class="info-box">
+                    <h3>Stall Safeguards</h3>
+                    <p>Smart electronic protection cuts power automatically to prevent internal gear stripping when high external resistance occurs.</p>
+                </div>
+            </div>
+            <div class="motor-bottom">
+                <div class="circle-box">
+                    <h4>Fun Fact</h4>
+                    <p>Inside every smart motor is its own tiny computer chip talking back to the main Brain 100 times every second!</p>
+                </div>
+                <div class="info-box">
+                    <h3>How to Use Smart Motors in Your Build</h3>
+                    <ul>
+                        <li>Connect the standard 4-wire communication cable directly from the motor housing into an open Brain port.</li>
+                        <li>Configure target velocity settings (0–100 RPM), target degrees, and holding brake modes inside VEXcode.</li>
+                        <li>Secure the outer structural housing firmly onto plastic beams using locking structural pins to prevent twisting under torque load.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-block" id="section-basebot">
+            <div class="section-header">
+                <h2>BaseBot Setup</h2>
+                <p class="subtitle">The Standard Foundation Build for Movement, Drivetrain Physics, and Turning Dynamics</p>
+            </div>
+            <div class="basebot-flow">
+                <div class="basebot-top-row">
+                    <div class="info-box">
+                        <h3>Chassis Architecture & Drivetrain Physics</h3>
+                        <p>Built upon a rigid structural plastic beam framework configured with a 2-motor independent tank-drive layout. Omnidirectional support wheels minimize surface friction during sharp pivot maneuvers while maintaining a low center of gravity to prevent high-speed tipping.</p>
+                    </div>
+                    <div class="circle-box">
+                        <h4>Fun Fact</h4>
+                        <p>Tank-drive robots can spin completely in place because their left and right wheels drive in opposite directions!</p>
+                    </div>
+                </div>
+                <div class="step-cards">
+                    <div class="info-box">
+                        <h3>Step 1: Assembly</h3>
+                        <p>Follow the step-by-step assembly manual to build the rigid structural plastic chassis framework and align axle bearings.</p>
+                    </div>
+                    <div class="info-box">
+                        <h3>Step 2: Wiring</h3>
+                        <p>Wire the left and right drive motors into designated control ports on the central Robot Brain and bundle cables securely.</p>
+                    </div>
+                    <div class="info-box">
+                        <h3>Step 3: Testing</h3>
+                        <p>Test drive movements using remote control configurations before writing custom autonomous pathfinding scripts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-block" id="section-sensors">
+            <div class="section-header">
+                <h2>Core Sensors</h2>
+                <p class="subtitle">Distance, Optical, Gyro, and Touch Modules for Complete Environmental Awareness</p>
+            </div>
+            <div class="sensor-header-row">
+                <div class="info-box">
+                    <h3>Sensor Integration Overview</h3>
+                    <p>Modules refresh state parameters up to 50 times per second, feeding real-time telemetry into your program logic to detect boundary walls, track heading angles, and sort objects by complex color signatures.</p>
+                </div>
+                <div class="circle-box">
+                    <h4>Fun Fact</h4>
+                    <p>The ultrasonic distance sensor calculates distance by measuring how long sound takes to bounce back, just like a submarine's sonar!</p>
+                </div>
+            </div>
+            <div class="sensor-cards-grid">
+                <div class="sensor-card">
+                    <div class="placeholder-box">
+                        <strong>[ IMAGE: DISTANCE SENSOR ]</strong>
+                    </div>
+                    <h3>Distance Sensor Module</h3>
+                    <p>Emits high-frequency acoustic waves to track precise centimeters and inches over short obstacles, allowing the robot to stop safely before collisions.</p>
+                </div>
+                <div class="sensor-card">
+                    <div class="placeholder-box">
+                        <strong>[ IMAGE: OPTICAL SENSOR ]</strong>
+                    </div>
+                    <h3>Optical Sensor Module</h3>
+                    <p>Combines an RGB colorimeter and ambient light reader to detect distinct hues, verify game piece colors, and measure surface brightness levels.</p>
+                </div>
+                <div class="sensor-card">
+                    <div class="placeholder-box">
+                        <strong>[ IMAGE: GYROSCOPE SENSOR ]</strong>
+                    </div>
+                    <h3>Gyroscope Sensor Module</h3>
+                    <p>Calculates precise yaw, pitch, and tilt orientation angles to ensure accurate straight-line driving and exact multi-degree pivot turns.</p>
+                </div>
+                <div class="sensor-card">
+                    <div class="placeholder-box">
+                        <strong>[ IMAGE: TOUCH LED SENSOR ]</strong>
+                    </div>
+                    <h3>Touch LED Sensor Module</h3>
+                    <p>Acts as an interactive button input while glowing in multiple programmable colors to signal robot states or trigger conditional start sequences.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-block" id="section-clawbot">
+            <div class="section-header">
+                <h2>ClawBot Build</h2>
+                <p class="subtitle">Advanced Manipulator Configuration Featuring Mechanical Arms and Pincer Grips</p>
+            </div>
+            <div class="clawbot-layout">
+                <div class="clawbot-left">
+                    <div class="info-box">
+                        <h3>Mechanical Advantage & Design Specs</h3>
+                        <p>Engineered with a high-mechanical advantage gear-ratio arm lift system and a secure pincer-grip end effector designed for stable object transport across complex field obstacles.</p>
+                    </div>
+                    <div class="info-box">
+                        <h3>How to Use the ClawBot</h3>
+                        <ul>
+                            <li>Construct the arm and pincer assembly following structural alignment instructions closely to avoid friction binding.</li>
+                            <li>Attach the arm elevation motor and claw clamping motor to dedicated smart ports on the central Brain unit.</li>
+                            <li>Program button controls on your controller interface to open/close the claw and raise/lower the arm smoothly during matches.</li>
+                        </ul>
+                    </div>
+                    <div class="info-box">
+                        <h3>Payload Optimization Tips</h3>
+                        <p>Adjust the rubber friction bands on the claw fingers to maximize grip tension without stalling the clamping motor gear cluster.</p>
+                    </div>
+                </div>
+                <div class="clawbot-right">
+                    <div class="circle-box">
+                        <h4>Fun Fact</h4>
+                        <p>Using compound gear reductions, the ClawBot arm multiplies torque so effectively that a small motor can lift items heavier than its own weight!</p>
+                    </div>
+                    <div class="massive-placeholder-box">
+                        <strong>[ MASSIVE IMAGE SLOT: CLAWBOT BUILD ]</strong>
+                        <span style="font-size: 0.95rem; color: #003d82; margin-top: 10px;">Primary Featured Technical Assembly View</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-block" id="section-ai">
+            <div class="section-header">
+                <h2>AI Vision Sensor</h2>
+                <p class="subtitle">Neural Processing, Optical Object Classification, and AprilTag Spatial Target Tracking</p>
+            </div>
+            <div class="ai-dashboard">
+                <div class="info-box">
+                    <h3>Object Signatures</h3>
+                    <p>Pre-trained machine learning object signatures track common arena items like cubes, balls, and rings automatically.</p>
+                </div>
+                <div class="info-box">
+                    <h3>Coordinate Tracking</h3>
+                    <p>Real-time X/Y coordinate frame metric tracking allows for precise target centering during fully autonomous matches.</p>
+                </div>
+                <div class="info-box">
+                    <h3>AprilTag Matrix</h3>
+                    <p>Supports standard ID codes (0–37) with advanced 3D spatial orientation math calculations.</p>
+                </div>
+            </div>
+            <div class="ai-full-width">
+                <div class="circle-box">
+                    <h4>Fun Fact</h4>
+                    <p>AprilTags contain unique black-and-white geometric patterns that act like computer vision barcodes for instant 3D positioning!</p>
+                </div>
+                <div class="info-box">
+                    <h3>How to Use the AI Vision Sensor</h3>
+                    <ul>
+                        <li>Mount the sensor facing forward with an unobstructed line of sight across the playing field.</li>
+                        <li>Connect the unit to a smart port and open the configuration utility to train custom visual signatures.</li>
+                        <li>Write code blocks to track recognized object coordinates or AprilTag ID values during matches.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
