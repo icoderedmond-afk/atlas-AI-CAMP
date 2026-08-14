@@ -3,88 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robotics Camp - Hardware & AI</title>
+    <title>Robotics Camp - Neon Data Hub</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #050505;
+            color: #ffffff;
             margin: 0;
-            padding: 30px;
-            background-color: #0d0d0d;
-            color: #f0f0f0;
+            padding: 20px;
         }
 
         header {
             text-align: center;
-            padding-bottom: 30px;
-            border-bottom: 1px solid #333;
+            padding: 30px;
+            border-bottom: 2px solid #ff007f;
+            margin-bottom: 30px;
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.3);
         }
 
         header h1 {
-            color: #00d2ff;
-            margin-bottom: 10px;
+            color: #0ff0fc;
+            text-shadow: 0 0 10px #0ff0fc, 0 0 20px #0ff0fc;
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        header p {
+            color: #39ff14;
+            text-shadow: 0 0 8px #39ff14;
+            margin-top: 10px;
         }
 
         .container {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 25px;
             justify-content: center;
-            max-width: 1200px;
-            margin: 30px auto;
+            max-width: 1300px;
+            margin: 0 auto;
         }
 
-        .card {
-            background: #1a1a1a;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            width: 300px;
-            box-sizing: border-box;
-            border-top: 4px solid #00d2ff;
-        }
-
-        .card h3 {
-            margin-top: 0;
-            color: #00d2ff;
-        }
-
-        /* Dedicated Feature Section for AI Vision Sensor */
-        .ai-feature {
-            width: 100%;
-            max-width: 960px;
-            background: #1e112a;
-            border: 2px solid #a100ff;
-            border-radius: 12px;
+        .page-card {
+            background: #111;
+            border: 2px solid #39ff14;
+            border-radius: 10px;
             padding: 25px;
-            margin: 40px auto 0 auto;
-            box-shadow: 0 0 15px rgba(161, 0, 255, 0.3);
+            width: 350px;
+            box-sizing: border-box;
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.2);
+            transition: transform 0.2s ease;
         }
 
-        .ai-feature h2 {
-            color: #d680ff;
+        .page-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(57, 255, 20, 0.5);
+        }
+
+        .page-card h2 {
+            color: #39ff14;
+            text-shadow: 0 0 8px #39ff14;
             margin-top: 0;
+            border-bottom: 1px dashed #39ff14;
+            padding-bottom: 10px;
+        }
+
+        .data-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .data-list li {
+            margin: 10px 0;
+            padding-left: 15px;
+            border-left: 3px solid #ff007f;
+        }
+
+        .data-list strong {
+            color: #ff007f;
+            text-shadow: 0 0 5px rgba(255, 0, 127, 0.5);
+        }
+
+        .card-brain { border-color: #0ff0fc; box-shadow: 0 0 15px rgba(15, 240, 252, 0.2); }
+        .card-brain h2 { color: #0ff0fc; text-shadow: 0 0 8px #0ff0fc; border-color: #0ff0fc; }
+        .card-brain strong { color: #0ff0fc; text-shadow: 0 0 5px rgba(15, 240, 252, 0.5); }
+        .card-brain li { border-left-color: #0ff0fc; }
+
+        .card-motors { border-color: #ff007f; box-shadow: 0 0 15px rgba(255, 0, 127, 0.2); }
+        .card-motors h2 { color: #ff007f; text-shadow: 0 0 8px #ff007f; border-color: #ff007f; }
+        .card-motors strong { color: #ff9900; text-shadow: 0 0 5px rgba(255, 153, 0, 0.5); }
+        .card-motors li { border-left-color: #ff007f; }
+
+        .card-basebot { border-color: #39ff14; box-shadow: 0 0 15px rgba(57, 255, 20, 0.2); }
+        .card-basebot h2 { color: #39ff14; text-shadow: 0 0 8px #39ff14; border-color: #39ff14; }
+
+        .card-sensors { border-color: #bf00ff; box-shadow: 0 0 15px rgba(191, 0, 255, 0.2); }
+        .card-sensors h2 { color: #bf00ff; text-shadow: 0 0 8px #bf00ff; border-color: #bf00ff; }
+        .card-sensors strong { color: #0ff0fc; text-shadow: 0 0 5px rgba(15, 240, 252, 0.5); }
+        .card-sensors li { border-left-color: #bf00ff; }
+
+        .card-clawbot { border-color: #ffea00; box-shadow: 0 0 15px rgba(255, 234, 0, 0.2); }
+        .card-clawbot h2 { color: #ffea00; text-shadow: 0 0 8px #ffea00; border-color: #ffea00; }
+        .card-clawbot strong { color: #39ff14; text-shadow: 0 0 5px rgba(57, 255, 20, 0.5); }
+        .card-clawbot li { border-left-color: #ffea00; }
+
+        .ai-page {
+            width: 100%;
+            max-width: 1135px;
+            background: #111;
+            border: 2px solid #ff00ff;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 40px auto 0 auto;
+            box-shadow: 0 0 25px rgba(255, 0, 255, 0.4);
+        }
+
+        .ai-page h2 {
+            color: #ff00ff;
+            text-shadow: 0 0 10px #ff00ff;
             text-align: center;
+            margin-top: 0;
+            font-size: 2rem;
         }
 
-        .ai-grid {
+        .ai-columns {
             display: flex;
-            gap: 20px;
+            gap: 25px;
             flex-wrap: wrap;
-            margin-top: 15px;
+            margin-top: 20px;
         }
 
-        .ai-box {
+        .ai-col {
             flex: 1;
-            min-width: 250px;
-            background: rgba(0, 0, 0, 0.3);
-            padding: 15px;
+            min-width: 280px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
             border-radius: 8px;
-            border-left: 3px solid #d680ff;
+            border: 1px solid #0ff0fc;
+            box-shadow: 0 0 10px rgba(15, 240, 252, 0.2);
         }
 
-        .ai-box h4 {
-            color: #e2aeff;
+        .ai-col h3 {
+            color: #0ff0fc;
+            text-shadow: 0 0 8px #0ff0fc;
             margin-top: 0;
         }
     </style>
@@ -92,47 +152,87 @@
 <body>
 
     <header>
-        <h1>VEX IQ Robotics Core Concepts</h1>
-        <p>Explore the fundamental hardware, builds, and smart optical sensors.</p>
+        <h1>⚡ VEX IQ DATA HUB ⚡</h1>
+        <p>[SYSTEM STATUS: ONLINE // FILE SAVED AS: idex.html]</p>
     </header>
 
     <main class="container">
         
-        <div class="card">
-            <h3>Robot Brain & Motors</h3>
-            <p>The Brain executes your code and processes data. High-torque smart motors give full control over speed, position, and direction.</p>
+        <div class="page-card card-brain">
+            <h2>Robot Brain</h2>
+            <ul class="data-list">
+                <li><strong>Processor:</strong> ARM Cortex Controller</li>
+                <li><strong>Display:</strong> Backlit LCD Screen</li>
+                <li><strong>Ports:</strong> 12 Auto-ID Smart Ports</li>
+                <li><strong>Power:</strong> Rechargeable Li-Ion Battery Pack</li>
+            </ul>
         </div>
 
-        <div class="card">
-            <h3>BaseBot Setup</h3>
-            <p>The foundational 2-motor drivetrain build. Learn driving controls, turn radii, and standard wheel movement.</p>
+        <div class="page-card card-motors">
+            <h2>Smart Motors</h2>
+            <ul class="data-list">
+                <li><strong>Speed:</strong> 0 to 100 RPM Control</li>
+                <li><strong>Feedback:</strong> Built-in Rotation & Degree Tracking</li>
+                <li><strong>Torque:</strong> High-power internal gearing</li>
+                <li><strong>Safety:</strong> Auto-stall protection circuit</li>
+            </ul>
         </div>
 
-        <div class="card">
-            <h3>ClawBot Upgrade</h3>
-            <p>An extension built on top of the BaseBot. Adds a motorized robotic arm and claw mechanism to grab and relocate objects.</p>
+        <div class="page-card card-basebot">
+            <h2>BaseBot Setup</h2>
+            <ul class="data-list">
+                <li><strong>Drivetrain:</strong> 2-Motor Tank Drive</li>
+                <li><strong>Wheels:</strong> 200mm Omnidirectional / Standard</li>
+                <li><strong>Chassis:</strong> Compact beam configuration</li>
+                <li><strong>Purpose:</strong> Fundamental navigation & turning</li>
+            </ul>
         </div>
 
-        <div class="card">
-            <h3>Core Sensors</h3>
-            <p>Integrate Distance, Optical, Gyro, and Touch LED sensors to give your robot spatial awareness and wall-detection capabilities.</p>
+        <div class="page-card card-sensors">
+            <h2>Core Sensors</h2>
+            <ul class="data-list">
+                <li><strong>Distance:</strong> Measures cm/inches using ultrasonic waves</li>
+                <li><strong>Optical:</strong> Detects color, hue, and ambient light</li>
+                <li><strong>Gyro:</strong> Tracks exact yaw, pitch, and tilt angles</li>
+                <li><strong>Touch LED:</strong> Programmable state button & indicator</li>
+            </ul>
+        </div>
+
+        <div class="page-card card-clawbot">
+            <h2>ClawBot Build</h2>
+            <ul class="data-list">
+                <li><strong>Arm Motor:</strong> Dedicated gear-ratio lift system</li>
+                <li><strong>Claw Mechanism:</strong> Pincer grip for object transport</li>
+                <li><strong>Stability:</strong> Counter-balanced chassis weight</li>
+                <li><strong>Use Case:</strong> Scoring objects & arena sorting</li>
+            </ul>
         </div>
 
     </main>
 
-    <section class="ai-feature">
-        <h2>★ Special Feature: AI Vision Sensor</h2>
-        <p>Takes your robot to the next level with artificial intelligence, live image processing, and precision target tracking.</p>
+    <section class="ai-page">
+        <h2>⚡ AI VISION SENSOR DATA ARCHIVE ⚡</h2>
+        <p style="text-align: center; color: #ffea00; text-shadow: 0 0 5px rgba(255,234,0,0.5);">Advanced Neural Processing & Spatial Tracking Unit</p>
 
-        <div class="ai-grid">
-            <div class="ai-box">
-                <h4>AI Classifications</h4>
-                <p>Recognizes specific pre-trained game objects (cubes, rings, and balls). Tracks visual signatures like size, center coordinates, and object count in real-time.</p>
+        <div class="ai-columns">
+            <div class="ai-col">
+                <h3>AI Classifications</h3>
+                <ul class="data-list" style="border-left: none; padding-left: 0;">
+                    <li><strong>Object Detection:</strong> Pre-trained signatures (Cubes, Balls, Rings)</li>
+                    <li><strong>Metrics:</strong> Live X/Y coordinate tracking</li>
+                    <li><strong>Capacity:</strong> Multiple objects tracked simultaneously</li>
+                    <li><strong>Filtering:</strong> Color-signature priority sorting</li>
+                </ul>
             </div>
 
-            <div class="ai-box">
-                <h4>AprilTag Tracking</h4>
-                <p>Detects unique square 2D matrix tags (IDs 0–37). Uses precise location data (angle, distance, 3D orientation) to navigate fields and identify targets effortlessly.</p>
+            <div class="ai-col" style="border-color: #ff007f; box-shadow: 0 0 10px rgba(255,0,127,0.2);">
+                <h3 style="color: #ff007f; text-shadow: 0 0 8px #ff007f;">AprilTag Tracking</h3>
+                <ul class="data-list" style="border-left: none; padding-left: 0;">
+                    <li><strong>Tag Range:</strong> Standard 2D Matrix IDs (0–37)</li>
+                    <li><strong>Precision:</strong> 3D spatial orientation calculation</li>
+                    <li><strong>Distance Matrix:</strong> Calculates exact range to target tag</li>
+                    <li><strong>Navigation:</strong> Autonomous waypoint alignment</li>
+                </ul>
             </div>
         </div>
     </section>
